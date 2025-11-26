@@ -3,7 +3,7 @@
 > **Assessment Guide:**
 > A step-by-step worksheet you can use to complete most of the project's coding and version control requirements. Please [raise any issues](https://github.com/NM-TAFE/civ-ipriot-in-class-demos/issues) you identify with the guide using the tag `project-guide`.
 
-![Image of a modern car park](images/new_car_park.png)
+![Image of a modern car park](screenshots/new_car_park.png)
 
 ## 1. Overview
 
@@ -73,9 +73,9 @@ Notes on using this guide:
 **Additional evidencing:**
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
 
-```markdown
+
 ![Initial commit](screenshots/image-of-github-after-push.png)
-```
+
 
 ### 2.2. Create a branch for your work
 
@@ -92,9 +92,9 @@ After reading the task requirements, you should be able to identify the classes,
 
 | Class Name | Attributes | Methods |
 | ---------- | ---------- | ------- |
-| `CarPark`    |            |         |
-| `Sensor`     |            |         |
-| `Display`    |            |         |
+| `CarPark`    |- total_spaces(int) <br>- occupied_spaces(int)          |- park_car()<br>- leave_car()         |
+| `Sensor`     |- sensor-id(str)<br>- status(bool)            |- detect_car()<br>- reset_sensor()         |
+| `Display`    |- available_spaces(init)<br>- location(str)            |- update_display()<br>- show_message(message)         |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
