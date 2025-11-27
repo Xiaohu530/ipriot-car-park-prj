@@ -15,8 +15,6 @@ class CarPark:
   def register(self, component):
     """
     Register sensors and displays.
-    
-    :param component: A generic placeholder either a Sensor or a Display.
     """
     if not isinstance(component, (Sensor, Display)):
       raise TypeError("Object must be a Sensor or Display")
@@ -27,24 +25,38 @@ class CarPark:
       self.displays.append(component)
       
   
-  def add_car(self):
+  def add_car(self, plate):
     """
     Record the plate and update the displays.
-    
-    :param self: Description
     """
-    pass
+    self.plates.append(plate)
+    self.update_displays()
   
-  def remove_car(self):
+  def remove_car(self, plate):
     """
     Remove the plate number and update the displays.
-    
-    :param self: Description
     """
-    pass
+    if plate in self.plates:
+      self.plates.remove(plate)
+      self.update_displays()
+    else:
+      print(f"Plate {plate} not found in car park.")
+      
+  @property
+  def available_bays(self):
+    """
+    Calculate avaiable bays.
+    If more cars than capacity, return 0 instead of negative number.
+    """
+    return max(self.capacity - len(self.plates), 0)
   
-  def update_displays():
+  def update_displays(self):
     """
     Update the displays.
     """
-    pass
+    data = {
+      "available_bays": self.available_bays, "temperature": 25
+      }
+    
+    for display in self.displays:
+      display.update(data)
