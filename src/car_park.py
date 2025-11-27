@@ -1,5 +1,5 @@
-from sensor import Sensor
-from display import Display
+from src.sensor import Sensor
+from src.display import Display
 from datetime import datetime
 
 class CarPark:
@@ -41,7 +41,8 @@ class CarPark:
             self.plates.remove(plate)
             self.update_displays()
         else:
-            print(f"Plate {plate} not found in car park.")
+            # print(f"Plate {plate} not found in car park.")
+            raise ValueError(f"Plate {plate} not found")
       
     @property
     def available_bays(self):
