@@ -12,4 +12,4 @@ class Display:
         Receive data and display it.
         """
         for key, value in data.items():
-            print(f"{key}: {value}")
+            setattr(self, key, value)
