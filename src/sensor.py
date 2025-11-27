@@ -41,6 +41,7 @@ class ExitSensor(Sensor):
         else:
             print("No cars available to exit")
     
+    # Override the _scan_plate method
     def _scan_plate(self):
         if self.car_park and self.car_park.plates:
             return random.choice(self.car_park.plates)

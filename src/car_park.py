@@ -12,8 +12,8 @@ class CarPark:
         self.displays = displays or []
         self.sensors = sensors or []
         
+        # Ensure self.log_file is a Path object
         self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
-        # create the file if it doesn't exist:
         self.log_file.touch(exist_ok=True)
     
     def __str__(self):
@@ -49,7 +49,6 @@ class CarPark:
             self.update_displays()
             self._log_car_activity(plate, "exited")
         else:
-            # print(f"Plate {plate} not found in car park.")
             raise ValueError(f"Plate {plate} not found")
       
     @property
@@ -65,7 +64,8 @@ class CarPark:
         Update the displays.
         """
         data = {
-            "available_bays": self.available_bays, "temperature": 25,
+            "available_bays": self.available_bays, 
+            "temperature": 25,
             "time": datetime.now().strftime("%H:%M:%S")
         }
         
@@ -76,11 +76,6 @@ class CarPark:
         with self.log_file.open("a") as f:
             f.write(f"{plate} {action} at {datetime.now():%Y-%m-%d %H:%M:%S}\n")
             
-    # def write_config(self):
-    #     with open("config.json", "w") as f:
-    #         json.dump({"location": self.location,
-    #                     "capacity": self.capacity,
-    #                     "log_file": str(self.log_file)}, f)
     def write_config(self, filename):
         config = {
             "location": self.location,

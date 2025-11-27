@@ -92,9 +92,9 @@ After reading the task requirements, you should be able to identify the classes,
 
 | Class Name | Attributes | Methods |
 | ---------- | ---------- | ------- |
-| `CarPark`    |- total_bays <br>- occupied_bays          |- park_car()<br>- leave_car()         |
-| `Sensor`     |- sensor_id<br>- status            |- detect_car()<br>- reset_sensor()         |
-| `Display`    |- available_bays<br>- location            |- update_display()<br>- show_message(message)         |
+| `CarPark`    |- total_bays <br>- occupied_bays          |- add_car()<br>- remove_car()         |
+| `Sensor`     |- sensor_id<br>- status            |- detect_car()<br>- update_status()         |
+| `Display`    |- message<br>- status            |- update_display()<br>- show_message(message)         |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -1049,9 +1049,9 @@ We are going to do the latter:
 **Additional evidencing:**
 After you have merged your branch to main, push to your remote with the s10 tag. Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](screenshots/methods-to-car-park.png)
-```
+
+![Added methods to the car park class](screenshots/config-methods-to-car-park.png)
+
 
 ### 2.14. Final step: build a car park
 
@@ -1091,9 +1091,7 @@ In your final submission, you must include any files you created or modified. Th
 
 1. Add a screenshot of the output of the `main.py` file:
 
-   ```markdown
    ![Main.py output](screenshots/main-py.png)
-   ```
 
 > Required for evidencing competency:
 
@@ -1128,4 +1126,4 @@ In your final submission, you must include any files you created or modified. Th
 
 --------
 
-![Image of a car park on the moon](images/moon_park.png)
+![Image of a car park on the moon](screenshots/moon_park.png)
