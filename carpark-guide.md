@@ -92,9 +92,9 @@ After reading the task requirements, you should be able to identify the classes,
 
 | Class Name | Attributes | Methods |
 | ---------- | ---------- | ------- |
-| `CarPark`    |- total_spaces(int) <br>- occupied_spaces(int)          |- park_car()<br>- leave_car()         |
-| `Sensor`     |- sensor-id(str)<br>- status(bool)            |- detect_car()<br>- reset_sensor()         |
-| `Display`    |- available_spaces(init)<br>- location(str)            |- update_display()<br>- show_message(message)         |
+| `CarPark`    |- total_bays <br>- occupied_bays          |- park_car()<br>- leave_car()         |
+| `Sensor`     |- sensor_id<br>- status            |- detect_car()<br>- reset_sensor()         |
+| `Display`    |- available_bays<br>- location            |- update_display()<br>- show_message(message)         |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -122,9 +122,8 @@ Ensure you have completed the previous table and include at least two methods an
 **Additional evidencing:**
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
 
-```markdown
 ![Added stubs for classes](screenshots/stubs-for-classes.png)
-```
+
 
 ### 2.5. Add constructors and attributes to the classes
 
