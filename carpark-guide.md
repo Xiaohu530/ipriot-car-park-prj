@@ -385,13 +385,13 @@ For example, you may want to see the number of available bays, the current tempe
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 >Q. Which class is responsible for the number of available bays (and why)?
-CarPark. Because it knows the capacity, tracks car parked and then can calculate available bays.
+`CarPark. Because it knows the capacity, tracks car parked and then can calculate available bays.`
 >
 >Q. Which class is responsible for the current temperature (and why)?
-Sensor. As a sensor could measure and report temperature.
+`Sensor. As a sensor could measure and report temperature.`
 >
 >Q. Which class is responsible for the time (and why)?
-Display. The time can be retrived from system, and show up.
+`Display. The time can be retrived from system, and show up.`
 >
 --------
 
@@ -465,26 +465,26 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
+
 ![Added methods to the car park class](screenshots/methods-to-car-park.png)
-```
+
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - *The number of available bays*
->      `Answer here...`
+>      `CarPark class, because it calculates the number of available bays using capacity - len(plates).`
 >    - *The current temperature*
->      `Answer here...`
+>      `Sensor class, it collects environmental like temperature.`
 >    - *The time*
->      `Answer here...`
+>      `Display class, it is retrived from system to add time to the information and display.`
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `Attribute is a vlue stored directly in an object, usually assigned in constructor __init__. For example: self.capacity etc. While Property is a method decorated with @property which behaves like an attribute but calculates its value dynamically. For example avaialble_bays.The main difference between it and method is when we call it, we do not need parathensis, like car_park.available_bays instead of car_bark.available_bays().` 
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `The advantage is flexibility, which means you can add or remove pieces of information (like time) without changing the method signature. However, the disadvanage is that we rely on the expected keys to property display the value. If a key is misspelled or missing, it may cause errors.`
 
 #### 2.7.5. Add a detect vehicle method to the Sensor class
 
